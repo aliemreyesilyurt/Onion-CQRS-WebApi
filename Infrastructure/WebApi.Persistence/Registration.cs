@@ -15,6 +15,7 @@ namespace WebApi.Persistence
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         }
     }
 }
