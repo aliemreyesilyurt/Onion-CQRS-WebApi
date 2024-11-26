@@ -15,11 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\WebApi.Infrastructure\WebApi.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\WebApi.Persistence\WebApi.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
