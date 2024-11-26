@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using WebApi.Application.Interfaces.Repositories;
 using WebApi.Domain.Common;
-using WebApi.Persistence.Context;
 
 namespace WebApi.Persistence.Repositories
 {
@@ -11,7 +10,7 @@ namespace WebApi.Persistence.Repositories
     {
         private readonly DbContext _context;
 
-        public ReadRepository(AppDbContext context)
+        public ReadRepository(DbContext context)
         {
             _context = context;
         }
