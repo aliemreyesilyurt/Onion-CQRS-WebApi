@@ -1,4 +1,5 @@
 using WebApi.Application;
+using WebApi.Application.Exceptions;
 using WebApi.Mapper;
 using WebApi.Persistence;
 
@@ -32,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureExceptionHandlingMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();
