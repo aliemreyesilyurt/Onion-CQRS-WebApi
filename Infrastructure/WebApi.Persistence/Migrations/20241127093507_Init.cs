@@ -94,24 +94,24 @@ namespace WebApi.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoryProduct",
+                name: "ProductCategories",
                 columns: table => new
                 {
-                    CategoriesId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryProduct", x => new { x.CategoriesId, x.ProductsId });
+                    table.PrimaryKey("PK_ProductCategories", x => new { x.ProductId, x.CategoryId });
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Categories_CategoriesId",
-                        column: x => x.CategoriesId,
+                        name: "FK_ProductCategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_ProductCategories_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -122,9 +122,9 @@ namespace WebApi.Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4456), false, "Outdoors & Games" },
-                    { 2, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4466), false, "Kids" },
-                    { 3, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4479), true, "Sports & Computers" }
+                    { 1, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1428), false, "Automotive & Books" },
+                    { 2, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1469), false, "Movies & Industrial" },
+                    { 3, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1496), true, "Shoes & Computers" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace WebApi.Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name", "ParentId", "Priorty" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5637), false, "Elektronik", 0, 1 },
-                    { 2, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5639), false, "Moda", 0, 2 },
-                    { 3, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5640), false, "Bilgisayar", 1, 1 },
-                    { 4, new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5642), false, "Kadin", 2, 1 }
+                    { 1, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5686), false, "Elektronik", 0, 1 },
+                    { 2, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5690), false, "Moda", 0, 2 },
+                    { 3, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5694), false, "Bilgisayar", 1, 1 },
+                    { 4, new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5697), false, "Kadin", 2, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,9 +143,9 @@ namespace WebApi.Persistence.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "IsDeleted", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7353), "Mollitia eaque vero qui dolore.", false, "Sunt." },
-                    { 2, 3, new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7415), "Voluptatem et voluptas consequatur explicabo.", true, "Quasi." },
-                    { 3, 4, new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7446), "Voluptatem ea explicabo placeat nobis.", false, "Molestias." }
+                    { 1, 1, new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6028), "Natus natus est cumque qui.", false, "Molestiae." },
+                    { 2, 3, new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6079), "Provident eum perspiciatis iste hic.", true, "Voluptas." },
+                    { 3, 4, new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6128), "Minus accusantium deserunt quibusdam exercitationem.", false, "Rerum." }
                 });
 
             migrationBuilder.InsertData(
@@ -153,18 +153,18 @@ namespace WebApi.Persistence.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedDate", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 11, 26, 12, 47, 31, 957, DateTimeKind.Local).AddTicks(5048), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 4.402149481985720m, false, 815.16m, "Incredible Concrete Bike" },
-                    { 2, 3, new DateTime(2024, 11, 26, 12, 47, 31, 957, DateTimeKind.Local).AddTicks(5071), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 4.292002025058870m, false, 171.70m, "Small Wooden Pants" }
+                    { 1, 1, new DateTime(2024, 11, 27, 12, 35, 6, 222, DateTimeKind.Local).AddTicks(7328), "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", 0.5858081633236530m, false, 48.92m, "Incredible Wooden Hat" },
+                    { 2, 3, new DateTime(2024, 11, 27, 12, 35, 6, 222, DateTimeKind.Local).AddTicks(7534), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", 4.823530606415560m, false, 546.14m, "Awesome Concrete Fish" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryProduct_ProductsId",
-                table: "CategoryProduct",
-                column: "ProductsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_CategoryId",
                 table: "Details",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_CategoryId",
+                table: "ProductCategories",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -177,16 +177,16 @@ namespace WebApi.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CategoryProduct");
-
-            migrationBuilder.DropTable(
                 name: "Details");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Brands");

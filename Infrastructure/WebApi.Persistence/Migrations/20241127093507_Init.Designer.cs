@@ -12,7 +12,7 @@ using WebApi.Persistence.Context;
 namespace WebApi.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241126094732_Init")]
+    [Migration("20241127093507_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -24,21 +24,6 @@ namespace WebApi.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategoryProduct");
-                });
 
             modelBuilder.Entity("WebApi.Domain.Entities.Brand", b =>
                 {
@@ -67,23 +52,23 @@ namespace WebApi.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4456),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1428),
                             IsDeleted = false,
-                            Name = "Outdoors & Games"
+                            Name = "Automotive & Books"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4466),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1469),
                             IsDeleted = false,
-                            Name = "Kids"
+                            Name = "Movies & Industrial"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(4479),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(1496),
                             IsDeleted = true,
-                            Name = "Sports & Computers"
+                            Name = "Shoes & Computers"
                         });
                 });
 
@@ -119,7 +104,7 @@ namespace WebApi.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5637),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5686),
                             IsDeleted = false,
                             Name = "Elektronik",
                             ParentId = 0,
@@ -128,7 +113,7 @@ namespace WebApi.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5639),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5690),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -137,7 +122,7 @@ namespace WebApi.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5640),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5694),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -146,7 +131,7 @@ namespace WebApi.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 953, DateTimeKind.Local).AddTicks(5642),
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 208, DateTimeKind.Local).AddTicks(5697),
                             IsDeleted = false,
                             Name = "Kadin",
                             ParentId = 2,
@@ -190,28 +175,28 @@ namespace WebApi.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7353),
-                            Description = "Mollitia eaque vero qui dolore.",
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6028),
+                            Description = "Natus natus est cumque qui.",
                             IsDeleted = false,
-                            Title = "Sunt."
+                            Title = "Molestiae."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7415),
-                            Description = "Voluptatem et voluptas consequatur explicabo.",
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6079),
+                            Description = "Provident eum perspiciatis iste hic.",
                             IsDeleted = true,
-                            Title = "Quasi."
+                            Title = "Voluptas."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 955, DateTimeKind.Local).AddTicks(7446),
-                            Description = "Voluptatem ea explicabo placeat nobis.",
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 214, DateTimeKind.Local).AddTicks(6128),
+                            Description = "Minus accusantium deserunt quibusdam exercitationem.",
                             IsDeleted = false,
-                            Title = "Molestias."
+                            Title = "Rerum."
                         });
                 });
 
@@ -257,39 +242,39 @@ namespace WebApi.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 957, DateTimeKind.Local).AddTicks(5048),
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Discount = 4.402149481985720m,
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 222, DateTimeKind.Local).AddTicks(7328),
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Discount = 0.5858081633236530m,
                             IsDeleted = false,
-                            Price = 815.16m,
-                            Title = "Incredible Concrete Bike"
+                            Price = 48.92m,
+                            Title = "Incredible Wooden Hat"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2024, 11, 26, 12, 47, 31, 957, DateTimeKind.Local).AddTicks(5071),
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Discount = 4.292002025058870m,
+                            CreatedDate = new DateTime(2024, 11, 27, 12, 35, 6, 222, DateTimeKind.Local).AddTicks(7534),
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Discount = 4.823530606415560m,
                             IsDeleted = false,
-                            Price = 171.70m,
-                            Title = "Small Wooden Pants"
+                            Price = 546.14m,
+                            Title = "Awesome Concrete Fish"
                         });
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("WebApi.Domain.Entities.ProductCategory", b =>
                 {
-                    b.HasOne("WebApi.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.HasOne("WebApi.Domain.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("WebApi.Domain.Entities.Detail", b =>
@@ -314,9 +299,35 @@ namespace WebApi.Persistence.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("WebApi.Domain.Entities.ProductCategory", b =>
+                {
+                    b.HasOne("WebApi.Domain.Entities.Category", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApi.Domain.Entities.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("WebApi.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Details");
+
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("WebApi.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }
