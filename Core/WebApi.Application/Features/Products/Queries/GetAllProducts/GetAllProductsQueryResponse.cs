@@ -1,4 +1,6 @@
-﻿namespace WebApi.Application.Features.Products.Queries.GetAllProducts
+﻿using WebApi.Application.DTOs;
+
+namespace WebApi.Application.Features.Products.Queries.GetAllProducts
 {
     public class GetAllProductsQueryResponse
     {
@@ -6,6 +8,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
+        public BrandDto Brand { get; set; }
 
     }
 }
